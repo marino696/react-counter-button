@@ -1,17 +1,14 @@
 import { useState } from "react";
 
-interface ButtonProps {
+interface ButtonSharedStateProps {
     count: number;
     onClick: () => void;
 }
 
-export default function Button({ count, onClick }: ButtonProps) {
-    // const [count, setCount] = useState(0);
-  
-    // function handleClick() {
-    //   setCount(count + 1);
-    // }
-  
+export const ButtonSharedState = ({
+    count,
+    onClick
+  }: ButtonSharedStateProps) => {  
     return (
       <button
         className="bg-blue-500 hover:bg-blue-700 rounded text-white font-bold px-4 py-2"
