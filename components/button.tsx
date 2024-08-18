@@ -1,18 +1,23 @@
 import { useState } from "react";
 
-export default function Button() {
-    const [count, setCount] = useState(0);
+interface ButtonProps {
+    count: number;
+    onClick: () => void;
+}
+
+export default function Button({ count, onClick }: ButtonProps) {
+    // const [count, setCount] = useState(0);
   
-    function handleClick() {
-      setCount(count + 1);
-    }
+    // function handleClick() {
+    //   setCount(count + 1);
+    // }
   
     return (
       <button
         className="bg-blue-500 hover:bg-blue-700 rounded text-white font-bold px-4 py-2"
-        onClick={handleClick}
+        onClick={onClick}
       >
-        have been clicked {count} times
+        I have been clicked {count} times
       </button>
     )
   }
